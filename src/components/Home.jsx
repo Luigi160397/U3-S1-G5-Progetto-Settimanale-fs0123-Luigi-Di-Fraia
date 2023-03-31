@@ -41,9 +41,11 @@ class Home extends Component {
           <div id="trending-now">
             <div className="movie-row">
               {this.state.isLoading && !this.state.error && (
-                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <div className="text-center">
+                  <Spinner id="caricamento" variant="danger" animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
               )}
               {this.state.error && !this.state.isLoading && (
                 <Alert variant="danger">
@@ -64,9 +66,11 @@ class Home extends Component {
           <div id="trending-now">
             <div className="movie-row">
               {this.state.isLoading && !this.state.error && (
-                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <div className="text-center">
+                  <Spinner id="caricamento" variant="danger" animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
               )}
               {this.state.error && !this.state.isLoading && (
                 <Alert variant="danger">
@@ -86,9 +90,11 @@ class Home extends Component {
           <div id="trending-now">
             <div className="movie-row">
               {this.state.isLoading && !this.state.error && (
-                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
+                <div className="text-center">
+                  <Spinner id="caricamento" variant="danger" animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                </div>
               )}
               {this.state.error && !this.state.isLoading && (
                 <Alert variant="danger">
