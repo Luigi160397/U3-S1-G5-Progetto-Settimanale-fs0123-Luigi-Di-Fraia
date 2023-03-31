@@ -1,7 +1,7 @@
 import { Component } from "react";
 import MyHeader from "./MyHeader";
 import Movie from "./Movie";
-import { Alert, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 
 class Home extends Component {
   state = {
