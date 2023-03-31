@@ -1,26 +1,34 @@
 import { Component } from "react";
 import MyHeader from "./MyHeader";
 import Movie from "./Movie";
+import { Alert, Spinner } from "react-bootstrap";
 
 class Home extends Component {
   state = {
-    HarryPotter: [],
+    Naruto: [],
     StarWars: [],
-    LordOfTheRing: []
+    LordOfTheRing: [],
+    error: false,
+    errorMsg: "",
+    isLoading: true
   };
 
   request = async (endpoint, stato) => {
     try {
       const response = await fetch(endpoint);
-      const data = await response.json();
-      this.setState({ [stato]: data.Search });
+      if (response.ok) {
+        const data = await response.json();
+        this.setState({ [stato]: data.Search, isLoading: false });
+      } else {
+        this.setState({ error: true, isLoading: false });
+      }
     } catch (error) {
-      console.error(error);
+      this.setState({ error: true, errorMsg: error.message, isLoading: false });
     }
   };
 
   componentDidMount() {
-    this.request("http://www.omdbapi.com/?apikey=5f735187&s=harry%20potter&type=movie", "HarryPotter");
+    this.request("http://www.omdbapi.com/?apikey=5f735187&s=naruto&type=movie", "Naruto");
     this.request("https://www.omdbapi.com/?apikey=5f735187&s=star%20wars&type=movie", "StarWars");
     this.request("https://www.omdbapi.com/?apikey=5f735187&s=lord%20of%20the%20rings&type=movie", "LordOfTheRing");
   }
@@ -29,11 +37,22 @@ class Home extends Component {
       <div className="container-fluid">
         <MyHeader />
         <div className="movie-gallery mx-md-5 mb-5 mt-4">
-          <h5 className="text-light mt-2 mb-2">Harry Potter</h5>
+          <h5 className="text-light mt-2 mb-2">Naruto</h5>
           <div id="trending-now">
             <div className="movie-row">
+              {this.state.isLoading && !this.state.error && (
+                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
+              {this.state.error && !this.state.isLoading && (
+                <Alert variant="danger">
+                  {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
+                </Alert>
+              )}
+
               <div className="row g-1 flex-nowrap movie-list py-2">
-                {this.state.HarryPotter.map(movie => (
+                {this.state.Naruto.map(movie => (
                   <Movie key={movie.imdbID} src={movie.Poster} alt={movie.Title} />
                 ))}
               </div>
@@ -44,6 +63,16 @@ class Home extends Component {
           <h5 className="text-light mt-2 mb-2">Star wars</h5>
           <div id="trending-now">
             <div className="movie-row">
+              {this.state.isLoading && !this.state.error && (
+                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
+              {this.state.error && !this.state.isLoading && (
+                <Alert variant="danger">
+                  {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
+                </Alert>
+              )}
               <div className="row g-1 flex-nowrap movie-list py-2">
                 {this.state.StarWars.map(movie => (
                   <Movie key={movie.imdbID} src={movie.Poster} alt={movie.Title} />
@@ -56,6 +85,16 @@ class Home extends Component {
           <h5 className="text-light mt-2 mb-2">Lord of the rings</h5>
           <div id="trending-now">
             <div className="movie-row">
+              {this.state.isLoading && !this.state.error && (
+                <Spinner id="caricamento" variant="secondary" animation="border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
+              {this.state.error && !this.state.isLoading && (
+                <Alert variant="danger">
+                  {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
+                </Alert>
+              )}
               <div className="row g-1 flex-nowrap movie-list py-2">
                 {this.state.LordOfTheRing.map(movie => (
                   <Movie key={movie.imdbID} src={movie.Poster} alt={movie.Title} />
