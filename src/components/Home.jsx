@@ -20,9 +20,9 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.request("http://www.omdbapi.com/?apikey=5f735187&s=harry%20potter", "HarryPotter");
-    this.request("https://www.omdbapi.com/?apikey=5f735187&s=star%20wars", "StarWars");
-    this.request("https://www.omdbapi.com/?apikey=5f735187&s=lord%20of%20the%20rings", "LordOfTheRing");
+    this.request("http://www.omdbapi.com/?apikey=5f735187&s=harry%20potter&type=movie", "HarryPotter");
+    this.request("https://www.omdbapi.com/?apikey=5f735187&s=star%20wars&type=movie", "StarWars");
+    this.request("https://www.omdbapi.com/?apikey=5f735187&s=lord%20of%20the%20rings&type=movie", "LordOfTheRing");
   }
   render() {
     return (

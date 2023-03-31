@@ -132,3 +132,18 @@ input[type="checkbox"] {
 .movie-list {
   overflow: auto;
 }
+.movie-list::-webkit-scrollbar {
+  background-color: black;
+  height: 5px;
+}
+
+.movie-list::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-list::-webkit-scrollbar {
+    display: none;
+  }
+}
