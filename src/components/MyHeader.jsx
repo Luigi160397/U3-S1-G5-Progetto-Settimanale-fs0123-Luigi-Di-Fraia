@@ -18,10 +18,18 @@ function MyHeader() {
           title={genre}
           onSelect={handleSelect}
         >
-          <Dropdown.Item eventKey="Action">Action</Dropdown.Item>
-          <Dropdown.Item eventKey="Comedy">Comedy</Dropdown.Item>
-          <Dropdown.Item eventKey="Drama">Drama</Dropdown.Item>
-          <Dropdown.Item eventKey="Horror">Horror</Dropdown.Item>
+          <Dropdown.Item className="text-white" eventKey="Action">
+            Action
+          </Dropdown.Item>
+          <Dropdown.Item className="text-white" eventKey="Comedy">
+            Comedy
+          </Dropdown.Item>
+          <Dropdown.Item className="text-white" eventKey="Drama">
+            Drama
+          </Dropdown.Item>
+          <Dropdown.Item className="text-white" eventKey="Horror">
+            Horror
+          </Dropdown.Item>
         </DropdownButton>
       </div>
       <ButtonGroup aria-label="First group">
