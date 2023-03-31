@@ -12,6 +12,7 @@ body {
 
 .btn {
   border-radius: 0;
+  background-color: transparent;
 }
 
 #logo {
