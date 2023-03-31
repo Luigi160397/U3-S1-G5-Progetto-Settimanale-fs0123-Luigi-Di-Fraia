@@ -48,9 +48,9 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert className="text-center fw-bold" variant="danger">
+                <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
-                </Alert>
+                </h5>
               )}
 
               <div className="row g-1 flex-nowrap movie-list py-2">
@@ -73,9 +73,9 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert className="text-center fw-bold" variant="danger">
+                <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
-                </Alert>
+                </h5>
               )}
               <div className="row g-1 flex-nowrap movie-list py-2">
                 {this.state.StarWars.map(movie => (
@@ -97,9 +97,9 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert className="text-center fw-bold" variant="danger">
+                <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
-                </Alert>
+                </h5>
               )}
               <div className="row g-1 flex-nowrap movie-list py-2">
                 {this.state.OnePiece.map(movie => (
