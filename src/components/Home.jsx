@@ -48,7 +48,7 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert variant="danger">
+                <Alert className="text-center fw-bold" variant="danger">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </Alert>
               )}
@@ -73,7 +73,7 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert variant="danger">
+                <Alert className="text-center fw-bold" variant="danger">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </Alert>
               )}
@@ -97,7 +97,7 @@ class Home extends Component {
                 </div>
               )}
               {this.state.error && !this.state.isLoading && (
-                <Alert variant="danger">
+                <Alert className="text-center fw-bold" variant="danger">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </Alert>
               )}
