@@ -47,7 +47,7 @@ class Home extends Component {
                   </Spinner>
                 </div>
               )}
-              {this.state.error && !this.state.isLoading && (
+              {this.state.error && !this.state.isLoading && this.state.Naruto.length === 0 && (
                 <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </h5>
@@ -72,7 +72,7 @@ class Home extends Component {
                   </Spinner>
                 </div>
               )}
-              {this.state.error && !this.state.isLoading && (
+              {this.state.error && !this.state.isLoading && this.state.StarWars.length === 0 && (
                 <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </h5>
@@ -96,7 +96,7 @@ class Home extends Component {
                   </Spinner>
                 </div>
               )}
-              {this.state.error && !this.state.isLoading && (
+              {this.state.error && !this.state.isLoading && this.state.OnePiece.length === 0 && (
                 <h5 className="text-center fw-bold text-light">
                   {this.state.errorMsg ? this.state.errorMsg : "Errore nel reperire i dati"}
                 </h5>
