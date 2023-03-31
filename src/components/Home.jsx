@@ -7,7 +7,7 @@ class Home extends Component {
   state = {
     Naruto: [],
     StarWars: [],
-    LordOfTheRing: [],
+    OnePiece: [],
     error: false,
     errorMsg: "",
     isLoading: true
@@ -30,7 +30,7 @@ class Home extends Component {
   componentDidMount() {
     this.request("http://www.omdbapi.com/?apikey=5f735187&s=naruto&type=movie", "Naruto");
     this.request("https://www.omdbapi.com/?apikey=5f735187&s=star%20wars&type=movie", "StarWars");
-    this.request("https://www.omdbapi.com/?apikey=5f735187&s=lord%20of%20the%20rings&type=movie", "LordOfTheRing");
+    this.request("https://www.omdbapi.com/?apikey=5f735187&s=one%20piece&type=movie", "OnePiece");
   }
   render() {
     return (
@@ -96,7 +96,7 @@ class Home extends Component {
                 </Alert>
               )}
               <div className="row g-1 flex-nowrap movie-list py-2">
-                {this.state.LordOfTheRing.map(movie => (
+                {this.state.OnePiece.map(movie => (
                   <Movie key={movie.imdbID} src={movie.Poster} alt={movie.Title} />
                 ))}
               </div>
