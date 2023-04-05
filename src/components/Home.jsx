@@ -86,7 +86,7 @@ class Home extends Component {
           </div>
         </div>
         <div className="movie-gallery mx-md-5 mb-5 mt-4">
-          <h5 className="text-light mt-2 mb-2">Lord of the rings</h5>
+          <h5 className="text-light mt-2 mb-2">One Piece</h5>
           <div id="trending-now">
             <div className="movie-row">
               {this.state.isLoading && !this.state.error && (
